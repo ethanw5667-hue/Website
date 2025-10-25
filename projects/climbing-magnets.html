@@ -15,6 +15,9 @@
   .figure img{width:100%;height:auto;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow)}
   .figure small{display:block;color:var(--muted);margin-top:6px}
   .callout{border-left:4px solid var(--penn-blue);background:var(--paper-alt);padding:12px 14px;border-radius:10px;margin:14px 0}
+  .slides-wrap{margin:14px 0;border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
+  .slides-toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;justify-content:flex-start;padding:10px;background:var(--paper-alt);border-bottom:1px solid var(--line)}
+  .slides-embed{width:100%;height:min(85vh,900px);background:#fff}
   .refs{font-size:.95rem;color:var(--muted)}
 </style>
 </head>
@@ -58,17 +61,33 @@
 
       <p class="lead">We study why a horizontal rod of stacked neodymium magnets <em>climbs</em> a vertical ferromagnetic rod when the rod spins. The ascent emerges from a torque-driven <strong>stick–slip cycle</strong> along a shifting contact line. We couple a minimal dynamics model to measured interface friction and <strong>B–H</strong> hysteresis of candidate steels, then compare predicted vs observed climb trends.</p>
 
+      <!-- ========= Slides (inline) ========= -->
+      <h3>Slides</h3>
+      <div class="slides-wrap">
+        <div class="slides-toolbar">
+          <a class="btn" href="../assets/Climbing_Magnets.pdf" download>Download PDF</a>
+          <a class="btn ghost" href="../assets/Climbing_Magnets.pdf" target="_blank" rel="noopener">Open in new tab</a>
+          <span class="refs">Tip: on some phones, opening in a new tab renders better.</span>
+        </div>
+        <!-- Embed the PDF inline -->
+        <object class="slides-embed"
+                data="../assets/Climbing_Magnets.pdf#page=1&zoom=fitH"
+                type="application/pdf">
+          <p>PDF viewer not available. <a href="../assets/Climbing_Magnets.pdf">Open the slides</a>.</p>
+        </object>
+      </div>
+
       <h3>1) Phenomenology — how ascent appears</h3>
       <p>At low RPM the magnet rod rests against the steel and sticks. As the steel rotates, tangential drag and off-axis magnetic attraction produce a growing torque about the <em>instantaneous contact line</em>. When the static-friction threshold is exceeded, the rod slips: it rotates a few degrees, the contact line shifts upward, and the rod gains a small vertical step. Repeating cycles yield a non-zero mean climb velocity. Step size and period depend on friction, field strength, steel permeability, and geometry.</p>
 
       <div class="callout"><strong>Model idea.</strong> Treat the interface as a translating pressure profile. Stick while
-      <code>τ_mag(θ)+τ_g(θ) ≤ μ_s N r_eff</code>; advance through slip with μ<sub>k</sub> and update the vertical position. Averaging over one revolution gives climb rate vs RPM.</div>
+      <code>τ_mag(θ) + τ_g(θ) ≤ μ_s·N·r_eff</code>; advance through slip with μ<sub>k</sub> and update the vertical position. Averaging over one revolution gives climb rate vs RPM.</div>
 
       <h3>2) Stick–slip dynamics (minimal model)</h3>
       <ul>
         <li><strong>Magnetostatics.</strong> Magnet stack ≈ line of dipoles; attraction to a finite-μ cylinder sets normal force and magnetic torque (dipole strength calibrated by pull tests).</li>
         <li><strong>Contact mechanics.</strong> Arc contact with pressure profile <em>p(θ)</em>; rotation translates the profile and the torque lever arm.</li>
-        <li><strong>Slip criterion.</strong> Transition when <code>τ_mag(θ)+τ_g(θ) &gt; μ_s N r_eff</code>; evolve with kinetic friction during slip.</li>
+        <li><strong>Slip criterion.</strong> Transition when <code>τ_mag(θ) + τ_g(θ) &gt; μ_s·N·r_eff</code>; evolve with kinetic friction during slip.</li>
         <li><strong>Integration.</strong> Euler step in stick; explicit update across slip; iterate per revolution to obtain mean vertical velocity.</li>
       </ul>
 
@@ -98,11 +117,12 @@
         <small>Concept: CH1 → shunt (H), CH2 → pickup (∝ dB/dt).</small>
       </div>
 
-      <!-- If you export your loop plot, place it at assets/BHloops.png and this will show it: -->
-      <!-- <div class="figure">
+      <!-- If you export your loop overlay as an image, place it at assets/BHloops.png and uncomment:
+      <div class="figure">
         <img src="../assets/BHloops.png" alt="Overlay of B–H loops for all tested steels" loading="lazy">
         <small>Overlay of the nine samples. Differences in initial slope and coercivity change the torque budget and climb rate.</small>
-      </div> -->
+      </div>
+      -->
 
       <h3>5) Results & discussion</h3>
       <ul>
@@ -115,8 +135,6 @@
         <strong>Next.</strong> Add a Hall sensor for in-situ field/gap estimation and prototype a quick-release wedge to reduce peel force at lift-off.
       </div>
 
-      <h3>Appendix</h3>
-      <p class="refs">Slides / extended derivations (PDF): <a class="underline" href="../assets/Climbing_Magnets.pdf" target="_blank" rel="noopener">Climbing_Magnets.pdf</a></p>
     </div>
   </section>
 </main>
