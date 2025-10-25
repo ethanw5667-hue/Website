@@ -15,9 +15,6 @@
   .figure img{width:100%;height:auto;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow)}
   .figure small{display:block;color:var(--muted);margin-top:6px}
   .callout{border-left:4px solid var(--penn-blue);background:var(--paper-alt);padding:12px 14px;border-radius:10px;margin:14px 0}
-  .kpi{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:12px 0}
-  .kpi .box{border:1px solid var(--line);border-radius:12px;padding:12px;background:#fff;text-align:center}
-  .kpi .box b{display:block;font-size:22px}
   .refs{font-size:.95rem;color:var(--muted)}
 </style>
 </head>
@@ -59,73 +56,67 @@
         </div>
       </div>
 
-      <p class="lead">We study why a horizontal rod of stacked neodymium magnets <em>climbs</em> a vertical ferromagnetic rod when the rod spins. The observed ascent emerges from a torque-driven <strong>stick–slip cycle</strong> along a shifting contact line. We couple a minimal dynamics model to measured interface friction and <strong>B–H</strong> hysteresis of candidate steels, then compare predicted vs measured climb trends.</p>
-
-      <div class="kpi">
-        <div class="box"><b>9</b> steel rods<br><small>full B–H loops measured</small></div>
-        <div class="box"><b>μ</b> from demagnetized tests<br><small>Curie-heating in vacuum</small></div>
-        <div class="box"><b>35 V</b> pk–pk<br><small>scope signal in B–H rig</small></div>
-      </div>
+      <p class="lead">We study why a horizontal rod of stacked neodymium magnets <em>climbs</em> a vertical ferromagnetic rod when the rod spins. The ascent emerges from a torque-driven <strong>stick–slip cycle</strong> along a shifting contact line. We couple a minimal dynamics model to measured interface friction and <strong>B–H</strong> hysteresis of candidate steels, then compare predicted vs observed climb trends.</p>
 
       <h3>1) Phenomenology — how ascent appears</h3>
-      <p>At low RPM the magnet rod rests against the steel and sticks. As the steel rotates, tangential drag and the off-axis magnetic attraction produce a growing torque about the <em>instantaneous contact line</em>. When the static-friction threshold is exceeded, the rod slips: it rotates a few degrees, the contact line shifts upward, and the rod gains a small vertical step. Repeated cycles yield a non-zero mean climb velocity. The step size and period depend on friction, field strength, steel permeability, and geometry.</p>
+      <p>At low RPM the magnet rod rests against the steel and sticks. As the steel rotates, tangential drag and off-axis magnetic attraction produce a growing torque about the <em>instantaneous contact line</em>. When the static-friction threshold is exceeded, the rod slips: it rotates a few degrees, the contact line shifts upward, and the rod gains a small vertical step. Repeating cycles yield a non-zero mean climb velocity. Step size and period depend on friction, field strength, steel permeability, and geometry.</p>
 
-      <div class="callout"><strong>Model idea.</strong> Treat the interface as a pressure profile that translates with rotation. Stick while
-      <code>τ_mag(θ)+τ_g(θ) ≤ μ_s N r_eff</code>; integrate the rotational dynamics through the slip with kinetic friction to update the vertical position. Average over one revolution to predict climb rate vs RPM.</div>
+      <div class="callout"><strong>Model idea.</strong> Treat the interface as a translating pressure profile. Stick while
+      <code>τ_mag(θ)+τ_g(θ) ≤ μ_s N r_eff</code>; advance through slip with μ<sub>k</sub> and update the vertical position. Averaging over one revolution gives climb rate vs RPM.</div>
 
       <h3>2) Stick–slip dynamics (minimal model)</h3>
       <ul>
-        <li><strong>Magnetostatics.</strong> Approximate the magnet stack as a line of dipoles; attraction to a finite-μ cylinder sets the normal force and magnetic torque. Calibrate dipole strength by pull tests.</li>
-        <li><strong>Contact mechanics.</strong> Arc contact with pressure profile <em>p(θ)</em>; as the cylinder rotates the profile translates, changing lever arms of <em>τ_mag</em> and the normal reaction.</li>
-        <li><strong>Slip criterion.</strong> Transition at <code>τ_mag(θ)+τ_g(θ) &gt; μ_s N r_eff</code>; evolve with μ<sub>k</sub> during slip.</li>
+        <li><strong>Magnetostatics.</strong> Magnet stack ≈ line of dipoles; attraction to a finite-μ cylinder sets normal force and magnetic torque (dipole strength calibrated by pull tests).</li>
+        <li><strong>Contact mechanics.</strong> Arc contact with pressure profile <em>p(θ)</em>; rotation translates the profile and the torque lever arm.</li>
+        <li><strong>Slip criterion.</strong> Transition when <code>τ_mag(θ)+τ_g(θ) &gt; μ_s N r_eff</code>; evolve with kinetic friction during slip.</li>
         <li><strong>Integration.</strong> Euler step in stick; explicit update across slip; iterate per revolution to obtain mean vertical velocity.</li>
       </ul>
 
       <h3>3) Interface friction — measured without magnetic bias</h3>
-      <p>Direct ramp tests are corrupted by magnetization. We therefore removed magnetization by heating the magnets above their Curie point, then measured friction with the magnets inert.</p>
+      <p>Direct ramp tests are corrupted by magnetization. We removed magnetization by heating the magnets above Curie, then measured friction with the magnets inert.</p>
       <ul>
-        <li><strong>Problem.</strong> Heating in air oxidized surfaces and altered friction.</li>
-        <li><strong>Solution.</strong> Seal the magnet stack in a <strong>vacuum glass ampoule</strong>, then heat above Curie to demagnetize. Conduct inclined-plane tests to estimate μ<sub>s</sub>, μ<sub>k</sub> for different steel finishes. After tests, remagnetize/replace magnets for operation.</li>
-        <li><strong>Outcome.</strong> Stable μ values independent of field history; these feed directly into the dynamics model.</li>
+        <li><strong>Problem.</strong> Heating in air oxidized surfaces and changed μ.</li>
+        <li><strong>Solution.</strong> Seal the magnet stack in a <strong>vacuum glass ampoule</strong>, heat above Curie to demagnetize, perform inclined-plane tests for μ<sub>s</sub>, μ<sub>k</sub> on different finishes. Afterward, remagnetize/replace magnets.</li>
+        <li><strong>Outcome.</strong> Stable μ independent of field history; values fed directly into the model.</li>
       </ul>
 
       <div class="figure">
-        <img src="../assets/bh_setup_bench.png" alt="Bench with function generator, amplifier, oscilloscope, and solenoid test piece">
+        <img src="../assets/BHsetupacc.png" alt="Bench with function generator, amplifier, oscilloscope, and solenoid test piece" loading="lazy">
         <small>Bench during materials runs (friction and B–H characterization).</small>
       </div>
 
       <h3>4) Materials characterization — B–H loops (9 steels)</h3>
-      <p>Steel choice sets permeability, saturation, and coercivity, all of which affect <em>N</em> and <em>τ_mag</em>. We measured B–H loops for nine McMaster-Carr rods with a standard drive/pickup coil rig:</p>
+      <p>Steel choice sets permeability, saturation, and coercivity, which alter <em>N</em> and <em>τ_mag</em>. We measured B–H loops for nine McMaster-Carr rods using a standard drive/pickup coil rig:</p>
       <ul>
-        <li><strong>Primary (H):</strong> long solenoid driven by a sinusoid. A shunt resistor is monitored on scope CH1; current ∝ <em>H</em>.</li>
-        <li><strong>Secondary (B):</strong> short pickup coil near mid-span. CH2 ≈ d<em>B</em>/dt; integrate/scale to obtain <em>B</em>. In practice we use fixed-frequency scaling and plot CH2 vs CH1 in XY mode.</li>
-        <li><strong>Output:</strong> full hysteresis loops per sample; we extract initial permeability, saturation trend, and coercive field for the model.</li>
+        <li><strong>Primary (H):</strong> long solenoid driven by a sinusoid; a shunt resistor on CH1 gives current ∝ <em>H</em>.</li>
+        <li><strong>Secondary (B):</strong> short pickup near mid-span; CH2 ≈ d<em>B</em>/dt; integrate/scale to <em>B</em>, or plot CH2 vs CH1 in XY mode at fixed frequency.</li>
+        <li><strong>Output:</strong> full hysteresis loops → extract initial μ, coercive field, saturation trend for the model.</li>
       </ul>
 
       <div class="figure">
-        <img src="../assets/bh_setup_board.png" alt="Chalkboard schematic of B–H measurement wiring">
-        <small>Conceptual wiring: CH1 → shunt (H), CH2 → pickup (∝ dB/dt).</small>
+        <img src="../assets/BHsetup.png" alt="Chalkboard schematic of B–H measurement wiring" loading="lazy">
+        <small>Concept: CH1 → shunt (H), CH2 → pickup (∝ dB/dt).</small>
       </div>
 
-      <div class="figure">
-        <img src="../assets/bh_loops.png" alt="Overlay of B–H loops for all tested steels">
-        <small>Overlay of the nine samples. Differences in initial slope and coercivity explain changes in normal force and the torque budget, hence climb rate.</small>
-      </div>
+      <!-- If you export your loop plot, place it at assets/BHloops.png and this will show it: -->
+      <!-- <div class="figure">
+        <img src="../assets/BHloops.png" alt="Overlay of B–H loops for all tested steels" loading="lazy">
+        <small>Overlay of the nine samples. Differences in initial slope and coercivity change the torque budget and climb rate.</small>
+      </div> -->
 
       <h3>5) Results & discussion</h3>
       <ul>
-        <li><strong>Climb rate vs RPM.</strong> The model captures the measured trend; sensitivity analysis shows μ and saturation approach are first-order parameters.</li>
-        <li><strong>Instabilities.</strong> At edges/paint or large curvature changes, a slip event can yield no net ascent—consistent with the torque threshold picture. Adding a thin compliant layer smooths the contact-line motion.</li>
-        <li><strong>Design implications.</strong> Control micro-gap and finish; choose steels with favorable B–H; manage compliance to suppress nonproductive slips.</li>
+        <li><strong>Climb rate vs RPM.</strong> The model captures the measured trend; sensitivity shows μ and the approach to saturation are first-order parameters.</li>
+        <li><strong>Instabilities.</strong> At edges/paint or strong curvature changes, slips may yield no net ascent—consistent with the torque threshold picture. A thin compliant layer smooths the contact-line motion.</li>
+        <li><strong>Design implications.</strong> Control micro-gap/finish; choose steels with favorable B–H; add compliance to suppress non-productive slips.</li>
       </ul>
 
       <div class="callout">
-        <strong>Limitations & next steps.</strong> Quasi-2D magnetostatics and simplified pressure profiles ignore local asperities and eddy currents. Next, add a Hall sensor for in-situ field/gap estimation and prototype a quick-release wedge to reduce peel force at lift-off.
+        <strong>Next.</strong> Add a Hall sensor for in-situ field/gap estimation and prototype a quick-release wedge to reduce peel force at lift-off.
       </div>
 
       <h3>Appendix</h3>
       <p class="refs">Slides / extended derivations (PDF): <a class="underline" href="../assets/Climbing_Magnets.pdf" target="_blank" rel="noopener">Climbing_Magnets.pdf</a></p>
-      <p class="refs">This write-up follows the structure and measurements in my IYPT presentation. :contentReference[oaicite:0]{index=0}</p>
     </div>
   </section>
 </main>
