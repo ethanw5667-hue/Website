@@ -39,45 +39,43 @@
       Balloon-in-braid actuator: derive geometry, add balloon pressure model (e.g., Mooney–Rivlin), and use virtual work to predict force–contraction; validate with a force sensor rig.
     </p>
 
-    <!-- NEW: What I did -->
-    <div class="cards" style="margin-top:14px">
-      <article class="card">
+    <!-- ROW 1: What I did (left) + looping video (right) -->
+    <div class="grid" style="margin-top:16px;align-items:start">
+      <article>
         <h3>What I built and tested</h3>
         <ul>
           <li>Developed an <strong>experimental model</strong> for PAM force–contraction and hysteresis.</li>
           <li>Designed and machined a <strong>linear test rig</strong> with a stepper-driven carriage to apply controlled strain.</li>
           <li><strong>Coded an Arduino</strong> to automate inflate/deflate cycles and synchronized sampling.</li>
           <li><strong>Soldered & integrated sensors:</strong> Wheatstone-bridge force sensor, pressure transducer, and stepper motor driver; added <strong>solenoid valves</strong> for precise inflation/deflation.</li>
-          <li>Wrote automation so the rig could run unattended while I worked on other IYPT problems.</li>
+          <li>Automation let the rig run unattended while I worked on other IYPT problems.</li>
           <li>Presented results at the <strong>38th IYPT (Sweden)</strong>.</li>
         </ul>
       </article>
 
-      <!-- Media: looping clip (like a GIF) -->
-      <article class="card">
+      <article>
         <h3>Inflation/Deflation Loop</h3>
         <video
           src="../assets/muscle.mp4"
-          autoplay
-          loop
-          muted
-          playsinline
+          autoplay loop muted playsinline
           poster="../assets/SetupAM.png"
           style="max-width:100%;height:auto;border-radius:12px"
         ></video>
         <p class="embed-note">Short loop — smaller and smoother than a GIF.</p>
       </article>
-
-      <!-- Media: setup photo -->
-      <article class="card">
-        <h3>Experimental Setup</h3>
-        <img src="../assets/SetupAM.png" alt="Air muscle rig: stepper carriage, force sensor, pressure transducer, solenoid valves, and Arduino control." style="max-width:100%;height:auto;border-radius:12px;border:1px solid var(--line)">
-        <p class="embed-note">Labeled view of the test bench (force sensor, pressure transducer, solenoids, stepper).</p>
-      </article>
     </div>
-    <!-- /NEW -->
 
-    <div class="embed-controls" style="margin-top:16px">
+    <!-- ROW 2: Experimental setup (full width) -->
+    <div style="margin-top:18px">
+      <h3>Experimental Setup</h3>
+      <img src="../assets/SetupAM.png"
+           alt="Air muscle rig: stepper carriage, force sensor, pressure transducer, solenoid valves, and Arduino control."
+           style="max-width:100%;height:auto;border-radius:12px;border:1px solid var(--line)">
+      <p class="embed-note">Labeled view of the test bench (force sensor, pressure transducer, solenoids, stepper).</p>
+    </div>
+
+    <!-- PDF controls + embed at the very bottom -->
+    <div class="embed-controls" style="margin-top:20px">
       <a class="btn" href="../assets/Air_Muscle.pdf" download>Download PDF</a>
       <a class="btn ghost" href="../assets/Air_Muscle.pdf" target="_blank" rel="noopener">Open in new tab</a>
     </div>
