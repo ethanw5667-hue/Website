@@ -1,56 +1,93 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Projects — Ethan Wang</title>
-<meta name="description" content="Projects by Ethan Wang">
-<link rel="stylesheet" href="../styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Projects — Ethan Wang</title>
+  <meta name="description" content="Selected projects by Ethan Wang">
+  <link rel="stylesheet" href="../assets/styles.css">
 </head>
 <body>
-<div class="progress"></div>
-<header class="site-header">
-  <div class="container navbar">
-    <a class="brand" href="../index.html" aria-label="Home">
-      <span class="brand-badge" aria-hidden="true"></span>
-      <span class="brand-name">Ethan&nbsp;Wang</span>
-    </a>
-    <button class="menu" aria-controls="mainnav" aria-expanded="false">Menu</button>
-    <nav id="mainnav" class="nav">
-      <a href="../about.html">About</a>
-      <a class="active" href="./index.html">Projects</a>
-      <a href="../resume.html">Resume</a>
-      <a href="../cv.html">CV</a>
-      <a href="../contact.html" class="btn ghost">Contact</a>
-    </nav>
-  </div>
-</header>
-<main>
-  <section class="section alt">
-    <div class="container reveal">
-      <div class="overline">Projects</div>
-      <h2>Recent work</h2>
-      <p class="lead">Detailed pages with embedded PDFs and download links. Clean, reproducible write-ups.</p>
-      <div class="cards" style="margin-top:18px">
+  <div class="progress"></div>
+
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="brand" href="../index.html" aria-label="Home">
+        <span class="brand-badge" aria-hidden="true"></span>
+        <span class="brand-name">Ethan&nbsp;Wang</span>
+      </a>
+      <button class="menu" aria-controls="mainnav" aria-expanded="false">Menu</button>
+      <nav id="mainnav" class="nav">
+        <a href="../about.html">About</a>
+        <a class="active" href="./index.html">Projects</a>
+        <a href="../resume.html">Resume</a>
+        <a href="../cv.html">CV</a>
+        <a href="../contact.html" class="btn ghost">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <section class="container">
+      <h1 class="page-title">Projects</h1>
+      <p class="lede">Hardware builds, modeling, and notes I actually use. Each card links to a short write-up and assets.</p>
+
+      <div class="cards">
+        <!-- AstroSolver -->
         <article class="card reveal">
-          <h3><a class="underline" href="climbing-magnets.html">Climbing Magnets</a></h3>
-          <p class="meta">Stick–slip + magnetostatics; speed vs. ω.</p>
-          <p>Magnets “climb” a spinning ferromagnetic rod; torque balance plus friction and field geometry.</p>
+          <h3><a class="underline" href="./astrosolver.html">AstroSolver (prototype)</a></h3>
+          <p class="meta">Star finding · plate solve · extinction & sky quality</p>
+          <p>Detects stars (LoG + adaptive threshold), centroid-refines them, matches to a catalog, and estimates atmospheric extinction and light pollution. Repo + screenshots included.</p>
+          <p style="margin-top:8px">
+            <a class="btn ghost" href="https://github.com/ethanw5667-hue/astrosolver" target="_blank" rel="noopener">GitHub</a>
+          </p>
         </article>
+
+        <!-- Notes hub -->
         <article class="card reveal">
-          <h3><a class="underline" href="air-muscle.html">Air Muscle (PAM)</a></h3>
-          <p class="meta">Geometry, hysteresis, virtual work.</p>
-          <p>Balloon-in-braid actuator; predict force vs. contraction and compare to sensor data.</p>
+          <h3><a class="underline" href="./notes.html">Notes — IOAA + High School</a></h3>
+          <p class="meta">Cheat sheets · worked problems · lab procedures</p>
+          <p>A combined hub for my IOAA prep and high-school notes. Small previews and links; lab procedures collected in a separate mini-section.</p>
         </article>
+
+        <!-- Existing project pages (already in your repo) -->
         <article class="card reveal">
-          <h3><a class="underline" href="sanopen.html">DECA — SanoPen Innovation</a></h3>
-          <p class="meta">Product concept, markets, early financials.</p>
-          <p>Low-level laser therapy (LLLT) device—problem framing, segments, and plan.</p>
+          <h3><a class="underline" href="./air-muscle.html">Air Muscle (PAM)</a></h3>
+          <p class="meta">Pneumatics · control · characterization</p>
+          <p>DIY pneumatic artificial muscle with pressure/elongation characterization and control notes.</p>
+        </article>
+
+        <article class="card reveal">
+          <h3><a class="underline" href="./climbing-magnets.html">Climbing Magnets</a></h3>
+          <p class="meta">Stick–slip model · friction</p>
+          <p>Modeling and testing of stick–slip and friction behavior using magnet arrays.</p>
+        </article>
+
+        <article class="card reveal">
+          <h3><a class="underline" href="./sanopen.html">Sanopen (Business Draft)</a></h3>
+          <p class="meta">M&amp;T draft · problem framing</p>
+          <p>What it is, how it works, why it’s needed — a concise write-up and diagrams.</p>
         </article>
       </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© Ethan Wang</p>
     </div>
-  </section>
-</main>
-<footer class="site-footer"><div class="container">© <span id="year"></span> Ethan Wang</div></footer>
-<script src="../script.js"></script>
-</body></html>
+  </footer>
+  <script>
+    // simple mobile menu toggle (optional)
+    const btn = document.querySelector(".menu");
+    const nav = document.getElementById("mainnav");
+    if (btn && nav) {
+      btn.addEventListener("click", () => {
+        const open = btn.getAttribute("aria-expanded") === "true";
+        btn.setAttribute("aria-expanded", String(!open));
+        nav.classList.toggle("open");
+      });
+    }
+  </script>
+</body>
+</html>
