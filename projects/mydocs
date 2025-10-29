@@ -91,12 +91,12 @@
             From Friedmann equations and expansion history to distance ladders and CMB-era constraints; built for fast reference during IOAA prep.
           </p>
           <div class="pdf-toolbar">
-            <a class="btn" href="../assets/Claude_Cosmology.pdf" download>Download PDF</a>
-            <a class="btn ghost" href="../assets/Claude_Cosmology.pdf" target="_blank" rel="noopener">Open in new tab</a>
+            <a class="btn" href="../assets/Cosmology.pdf" download>Download PDF</a>
+            <a class="btn ghost" href="../assets/Cosmology.pdf" target="_blank" rel="noopener">Open in new tab</a>
             <span class="tiny">Preview shows page 1 only.</span>
           </div>
-          <object class="pdf-embed" data="../assets/Claude_Cosmology.pdf#page=1&zoom=fitH" type="application/pdf">
-            <p>PDF preview unavailable. <a href="../assets/Claude_Cosmology.pdf">Open the PDF</a>.</p>
+          <object class="pdf-embed" data="../assets/Cosmology.pdf#page=1&zoom=fitH" type="application/pdf">
+            <p>PDF preview unavailable. <a href="../assets/Cosmology.pdf">Open the PDF</a>.</p>
           </object>
         </article>
       </div>
