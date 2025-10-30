@@ -6,6 +6,15 @@
 <title>About — Ethan Wang</title>
 <meta name="description" content="About Ethan Wang">
 <link rel="stylesheet" href="styles.css">
+<style>
+  .pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:6px 10px;margin:4px 6px 0 0;font-weight:600}
+  .grid{display:grid;gap:18px}
+  .grid-2{grid-template-columns:1fr 1fr}
+  @media (max-width:900px){.grid-2{grid-template-columns:1fr}}
+  .card{border:1px solid var(--line);border-radius:12px;padding:14px;background:#fff;box-shadow:var(--shadow)}
+  .list-clean{margin:0;padding-left:18px}
+  .btn-row{display:flex;gap:10px;flex-wrap:wrap}
+</style>
 </head>
 <body>
 <div class="progress"></div>
@@ -18,7 +27,7 @@
     </a>
     <button class="menu" aria-controls="mainnav" aria-expanded="false">Menu</button>
     <nav id="mainnav" class="nav">
-      <a href="about.html">About</a>
+      <a class="active" href="about.html">About</a>
       <a href="projects/index.html">Projects</a>
       <a href="resume.html">Resume</a>
       <a href="cv.html">CV</a>
@@ -28,16 +37,92 @@
 </header>
 
 <main>
+  <!-- Intro -->
   <section class="section">
     <div class="container reveal">
       <div class="overline">About</div>
       <h2>From notebook to build bench.</h2>
-      <p class="lead">I’m a student in Toronto who loves mechanics-based physics, astronomy, and building reproducible demos for others to learn from.</p>
-      <ul style="margin:12px 0 0; padding-left:18px; color:var(--muted)">
-        <li>Based in Toronto • open to remote collab</li>
-        <li>Physics, math, and writing projects</li>
-        <li>Contact below</li>
-      </ul>
+      <p class="lead">
+        I’m a student in Toronto who loves mechanics-based physics, astronomy, and turning ideas into working demos others can learn from.
+        I split time between writing clear notes, building test rigs, and coaching younger teammates.
+      </p>
+
+      <div class="grid grid-2" style="margin-top:18px">
+        <div class="card">
+          <h3 style="margin-top:0">Quick facts</h3>
+          <ul class="list-clean" style="color:var(--muted)">
+            <li>Based in Toronto • open to remote collab</li>
+            <li>Physics (mechanics, astro) • math • technical writing</li>
+            <li>Hands-on: sensors, scopes, data fitting, documentation</li>
+          </ul>
+          <div style="margin-top:10px">
+            <span class="pill">Mechanics</span>
+            <span class="pill">Astrophysics</span>
+            <span class="pill">Data &amp; Visualization</span>
+            <span class="pill">Experimental Design</span>
+            <span class="pill">Student Mentorship</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-top:0">What I’m building now</h3>
+          <ul class="list-clean" style="color:var(--muted)">
+            <li><strong>Astro Sky Solver</strong> — detects stars in a single frame, plate-solves, cross-matches Gaia, and estimates limiting magnitude (sky quality).</li>
+            <li><strong>Study Materials</strong> — IOAA celestial mechanics &amp; cosmology notes + high-school physics quick-refs + lab procedures.</li>
+            <li><strong>Reproducible demos</strong> — small rigs + writeups for club workshops and contest prep.</li>
+          </ul>
+          <div class="btn-row" style="margin-top:10px">
+            <a class="btn" href="projects/astro-sky-solver.html">Astro Sky Solver</a>
+            <a class="btn ghost" href="projects/study-materials.html">Study Materials</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project sampler -->
+  <section class="section alt">
+    <div class="container reveal">
+      <h3>Selected projects</h3>
+      <div class="grid grid-2">
+        <div class="card">
+          <h4 style="margin-top:0">Astro Sky Solver</h4>
+          <p class="muted" style="margin:.25rem 0 1rem">
+            Star detection (Photutils), plate solving (Astrometry.net), Gaia DR3 cross-match, and limiting-magnitude estimate for light-pollution/airmass.
+          </p>
+          <div class="btn-row">
+            <a class="btn" href="projects/astro-sky-solver.html">Read more</a>
+            <a class="btn ghost" href="https://github.com/ethanw5667-hue/astrosolver" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h4 style="margin-top:0">Study Materials (IOAA + HS)</h4>
+          <p class="muted" style="margin:.25rem 0 1rem">
+            A living bundle of competition-grade notes (orbital mechanics, cosmology), high-school quick-refs, and a lab procedures handbook.
+          </p>
+          <div class="btn-row">
+            <a class="btn" href="projects/study-materials.html">Browse notes</a>
+            <a class="btn ghost" href="resume.html">See resume</a>
+          </div>
+        </div>
+      </div>
+
+      <p style="margin-top:12px">
+        Curious? Feel free to check out more on the <a href="projects/index.html">Projects</a> page — I keep it updated with new experiments and writeups.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section">
+    <div class="container reveal">
+      <h3>Let’s connect</h3>
+      <p class="muted">If you’d like to collaborate, get feedback on a build, or use these materials for a workshop, reach out.</p>
+      <div class="btn-row">
+        <a class="btn" href="contact.html">Contact</a>
+        <a class="btn ghost" href="cv.html">CV</a>
+      </div>
     </div>
   </section>
 </main>
@@ -48,6 +133,6 @@
   </div>
 </footer>
 <script src="script.js"></script>
-
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
