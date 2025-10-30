@@ -30,16 +30,20 @@
 </header>
 
 <section class="hero">
+  <!-- IMPORTANT: exactly two direct children inside .hero-inner to trigger the 2-column grid -->
   <div class="container hero-inner reveal">
+    <!-- Left column: headline + copy + CTAs -->
     <div>
       <div class="kicker">Physics • Engineering • Astrophysics</div>
       <h1>Ideas that fly — projects that land.</h1>
       <p class="lead">I’m Ethan, a senior into mechanics, astronomy, and hands-on builds. Besides my research and projects, I make demos and guides for labs, IOAA, and high-school physics.</p>
+      <div class="hero-cta">
         <a class="btn red" href="projects/index.html">See Projects</a>
-        <a class="btn ghost" href="resume.html">Resume</a>
         <a class="btn ghost" href="resume.html">Resume</a>
       </div>
     </div>
+
+    <!-- Right column: Highlights card -->
     <aside class="hero-card" aria-label="Highlights">
       <h3 style="margin:0 0 8px;color:var(--penn-blue)">Highlights</h3>
       <div class="hero-grid">
@@ -60,7 +64,6 @@
     <p>I work from first principles—optimizing wing shapes, modeling hysteresis in air muscles, and designing reproducible setups with clear methods. Projects span a prototype app that identifies stars and estimates sky glow, small biomedical engineering builds, and IOAA prep guides in celestial mechanics.</p>
   </div>
 </section>
-
 
 <footer class="site-footer">
   <div class="container">
