@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Study Materials — Ethan Wang</title>
+<meta name="description" content="Collected study notes: IOAA celestial mechanics & cosmology, high-school physics notes, and a lab procedures handbook.">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  .backlink{display:inline-block;margin-bottom:10px}
+  .project-hero{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+  .project-hero .meta{display:flex;gap:8px;flex-wrap:wrap}
+  .chip{border:1px solid var(--line);padding:6px 10px;border-radius:999px;font-weight:600;color:var(--penn-blue);background:#fff}
+  .section-grid{display:grid;gap:18px;margin:18px 0}
+  .card{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;box-shadow:var(--shadow)}
+  .card h4{margin:12px 16px 6px}
+  .card .desc{margin:0 16px 12px;color:var(--muted)}
+  .pdf-toolbar{display:flex;gap:8px;align-items:center;padding:10px;border-top:1px solid var(--line);background:var(--paper-alt)}
+  .pdf-embed{width:100%;height:min(70vh,700px);background:#fff;border-top:1px solid var(--line)}
+  .tiny{font-size:.92rem;color:var(--muted)}
+  .pill{display:inline-flex;gap:6px;align-items:center;border:1px dashed var(--line);padding:6px 10px;border-radius:999px}
+</style>
+</head>
+<body>
+<div class="progress"></div>
+
+<header class="site-header">
+  <div class="container navbar">
+    <a class="brand" href="../index.html" aria-label="Home">
+      <span class="brand-badge" aria-hidden="true"></span>
+      <span class="brand-name">Ethan&nbsp;Wang</span>
+    </a>
+    <button class="menu" aria-controls="mainnav" aria-expanded="false">Menu</button>
+    <nav id="mainnav" class="nav">
+      <a href="../about.html">About</a>
+      <a class="active" href="../projects.html">Projects</a>
+      <a href="../resume.html">Resume</a>
+      <a href="../cv.html">CV</a>
+      <a href="../contact.html" class="btn ghost">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="section">
+    <div class="container reveal">
+      <a class="backlink" href="../projects.html">← Back to Projects</a>
+
+      <div class="project-hero">
+        <div>
+          <div class="overline">Notes & teaching materials</div>
+          <h2>Study Materials — IOAA + High-School Physics</h2>
+        </div>
+        <div class="meta">
+          <span class="chip">IOAA</span>
+          <span class="chip">Celestial Mechanics</span>
+          <span class="chip">High-School Physics</span>
+          <span class="chip">Lab Procedures</span>
+        </div>
+      </div>
+
+      <p class="lead">
+        A curated, living bundle of my astronomy/physics handouts. It combines IOAA-oriented theory notes
+        (orbital mechanics & cosmology), distilled high-school study sheets, and a lab procedures manual I use
+        for training and club workshops. Each item below opens as a quick inline preview with download links.
+      </p>
+
+      <!-- =================== IOAA + Astro =================== -->
+      <h3>IOAA collection (theory first, then applications)</h3>
+      <div class="section-grid">
+        <!-- Orbital Mechanics -->
+        <article class="card">
+          <h4>Orbital Mechanics — Theory & Applications</h4>
+          <p class="desc">
+            Complete derivations (orbit equation, vis-viva, anomalies), worked examples, and problem-solving tips for competition style questions. :contentReference[oaicite:0]{index=0}
+          </p>
+          <div class="pdf-toolbar">
+            <a class="btn" href="../assets/orbitmechioaa.pdf" download>Download PDF</a>
+            <a class="btn ghost" href="../assets/orbitmechioaa.pdf" target="_blank" rel="noopener">Open in new tab</a>
+            <span class="tiny">Preview shows page 1 only.</span>
+          </div>
+          <object class="pdf-embed" data="../assets/orbitmechioaa.pdf#page=1&zoom=fitH" type="application/pdf">
+            <p>PDF preview unavailable. <a href="../assets/orbitmechioaa.pdf">Open the PDF</a>.</p>
+          </object>
+        </article>
+
+        <!-- Cosmology Notes -->
+        <article class="card">
+          <h4>Cosmology Notes — background → observations</h4>
+          <p class="desc">
+            From Friedmann equations and expansion history to distance ladders and CMB-era constraints; built for fast reference during IOAA prep.
+          </p>
+          <div class="pdf-toolbar">
+            <a class="btn" href="../assets/Cosmology.pdf" download>Download PDF</a>
+            <a class="btn ghost" href="../assets/Cosmology.pdf" target="_blank" rel="noopener">Open in new tab</a>
+            <span class="tiny">Preview shows page 1 only.</span>
+          </div>
+          <object class="pdf-embed" data="../assets/Cosmology.pdf#page=1&zoom=fitH" type="application/pdf">
+            <p>PDF preview unavailable. <a href="../assets/Cosmology.pdf">Open the PDF</a>.</p>
+          </object>
+        </article>
+      </div>
+
+      <!-- =================== High-School bundle =================== -->
+      <h3>High-School physics bundle</h3>
+      <div class="section-grid">
+        <article class="card">
+          <h4>Quick-reference Sheets</h4>
+          <p class="desc">
+            A compact set of unit-by-unit summaries and common derivations I give juniors before contests and unit tests (kinematics, E&M basics, waves, optics).
+          </p>
+          <div class="pdf-toolbar">
+            <a class="btn" href="../assets/high_school.pdf" download>Download PDF</a>
+            <a class="btn ghost" href="../assets/high_school.pdf" target="_blank" rel="noopener">Open in new tab</a>
+            <span class="tiny">Preview shows page 1 only.</span>
+          </div>
+          <object class="pdf-embed" data="../assets/high_school.pdf#page=1&zoom=fitH" type="application/pdf">
+            <p>PDF preview unavailable. <a href="../assets/high_school.pdf">Open the PDF</a>.</p>
+          </object>
+        </article>
+      </div>
+
+      <!-- =================== Lab Procedures =================== -->
+      <h3>Lab procedures & training manual</h3>
+      <div class="section-grid">
+        <article class="card">
+          <h4>Electronics & Lab Skills (IYPT/club training)</h4>
+          <p class="desc">
+            Safety, tools, measurement technique, oscilloscopes, soldering, wiring, and debugging checklists—geared for student-run labs and quick onboarding. :contentReference[oaicite:1]{index=1}
+          </p>
+          <div class="pdf-toolbar">
+            <a class="btn" href="../assets/labproc.pdf" download>Download PDF</a>
+            <a class="btn ghost" href="../assets/labproc.pdf" target="_blank" rel="noopener">Open in new tab</a>
+            <span class="tiny">Preview shows page 1 only.</span>
+          </div>
+          <object class="pdf-embed" data="../assets/labproc.pdf#page=1&zoom=fitH" type="application/pdf">
+            <p>PDF preview unavailable. <a href="../assets/labproc.pdf">Open the PDF</a>.</p>
+          </object>
+        </article>
+      </div>
+
+      <div class="callout" style="border-left:4px solid var(--penn-blue);background:var(--paper-alt);padding:12px 14px;border-radius:10px;margin:14px 0">
+        <span class="pill">How to cite</span>
+        <span class="tiny">If you reuse any tables/figures, please credit “Ethan Wang — Study Materials (IOAA & High-School Physics), {{YEAR}},” and link back to this page.</span>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">© <span id="year"></span> Ethan Wang</div>
+</footer>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+<script src="../script.js"></script>
+</body>
+</html>
