@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Resume — Ethan Wang</title>
-<meta name="description" content="Resume snapshot — Ethan Wang">
+<meta name="description" content="Resume — Ethan Wang (PDF)">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -20,7 +20,7 @@
     <nav id="mainnav" class="nav">
       <a href="about.html">About</a>
       <a href="projects/index.html">Projects</a>
-      <a href="resume.html">Resume</a>
+      <a href="resume.html" aria-current="page">Resume</a>
       <a href="cv.html">CV</a>
       <a href="contact.html" class="btn ghost">Contact</a>
     </nav>
@@ -31,13 +31,29 @@
   <section class="section">
     <div class="container reveal">
       <div class="overline">Resume</div>
-      <h2>Snapshot</h2>
-      <p class="lead">Will add after reviewing resume w u</p>
-      <ul style="margin:12px 0 0; padding-left:18px">
-        <li><strong>Education:</strong> St. Robert CHS (IB)</li>
-        <li><strong>Awards:</strong> IOAA, IYPT Canada, OAPT Absolute Winner</li>
-        <li><strong>Focus:</strong> Mechanics, astronomy, explanatory writing</li>
-      </ul>
+      <h2>PDF Viewer</h2>
+
+      <div class="btn-row" style="margin:10px 0 18px; display:flex; gap:10px; flex-wrap:wrap;">
+        <a class="btn" href="assets/Ethan_Wang_Resume.pdf" download>
+          Download PDF
+        </a>
+        <a class="btn ghost" href="assets/Ethan_Wang_Resume.pdf" target="_blank" rel="noopener">
+          Open in new tab
+        </a>
+      </div>
+
+      <!-- Embedded PDF with graceful fallback -->
+      <object
+        data="assets/Ethan_Wang_Resume.pdf#view=FitH"
+        type="application/pdf"
+        width="100%"
+        style="height:80vh; border:1px solid var(--line); border-radius:12px;">
+        <p>
+          Your browser can’t display embedded PDFs. You can
+          <a href="assets/Ethan_Wang_Resume.pdf" target="_blank" rel="noopener">open the resume in a new tab</a>
+          or <a href="assets/Ethan_Wang_Resume.pdf" download>download it</a>.
+        </p>
+      </object>
     </div>
   </section>
 </main>
